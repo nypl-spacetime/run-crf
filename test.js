@@ -1,7 +1,5 @@
 const fs = require('fs')
 const H = require('highland')
-
-const readline = require('readline')
 const spawn = require('child_process').spawn
 
 const crfFunctions = require('./lib/crf-functions.js')

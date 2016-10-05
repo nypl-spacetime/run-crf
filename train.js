@@ -1,5 +1,4 @@
 const H = require('highland')
-const R = require('ramda')
 const request = require('request')
 
 const crfFunctions = require('./lib/crf-functions.js')
