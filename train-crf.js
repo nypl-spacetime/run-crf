@@ -1,12 +1,12 @@
 const H = require('highland')
 const request = require('request')
+const config = require('./config.json')
 
 const crfFunctions = require('./lib/crf-functions.js')
 
-// const URL = 'http://surveyor-api.dev/tasks/label-fields/submissions/all.ndjson'
-const URL = 'http://localhost:55789/tasks/label-fields/submissions/all.ndjson'
+const submissionsUrl = `${config.apiUrl}tasks/${config.taskId}/submissions/all.ndjson`
 
-H(request(URL))
+H(request(submissionsUrl))
   .split()
   .compact()
   .map(JSON.parse)
