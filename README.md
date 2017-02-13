@@ -18,7 +18,11 @@ Now, run the CRF process on OCR output from our [OCR script](github.com/nypl-spa
     
 To save this data to file, use the `-o` options, or pipe the output to a file on your disk:
 
-    cat /path/to/city-directory/lines.ndjson | node run-crf.js > ./crf-output.ndjson
+    cat /path/to/city-directory/lines.ndjson | node run-crf.js > ./tmp/crf-results.ndjson
+
+Using sed and [jq](https://stedolan.github.io/jq/), we can output all the professions, sorted:
+
+    cat ./tmp/crf-results.ndjson | jq -r '. | .fields.profession' | sed 's/,$//g' | sort | uniq -c | sort
 
 ## See also
 
