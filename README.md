@@ -8,6 +8,10 @@ Then, install dependencies:
 
     npm install
     
+Make a directory which will hold training data:
+
+    mkdir tmp
+
 Then, train the CRF model using submissions from our [Label Fields](https://github.com/nypl-spacetime/label-fields) tool:
 
     ./train-crf.sh
